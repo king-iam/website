@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>King Intellectual Asset Management</title>
+<meta name="description" content="King Intellectual Asset Management is a boutique patent and trademark firm in Colorado, representing companies from garage startups to Fortune 500 technology leaders.">
+<meta name="theme-color" content="#202357">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<style>
+  @font-face { font-family: "Ubuntu"; font-weight: 400; font-style: normal; font-display: swap; src: url(assets/fonts/ubuntu-latin-400.woff2) format("woff2"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 500; font-style: normal; font-display: swap; src: url(assets/fonts/ubuntu-latin-500.woff2) format("woff2"); }
+  @font-face { font-family: "Ubuntu"; font-weight: 700; font-style: normal; font-display: swap; src: url(assets/fonts/ubuntu-latin-700.woff2) format("woff2"); }
+
+  :root {
+    --navy: #202357;
+    --teal-deep: #033244;
+    --teal: #078675;
+    --green: #69b645;
+    --ink: #2a2d45;
+    --muted: #5a6175;
+    --line: #e1e6e8;
+    --soft: #f3f6f5;
+    --bg: #ffffff;
+    --heading: "Ubuntu", "Segoe UI", system-ui, sans-serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --wrap: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.65 var(--body); }
+  a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--navy); }
+  h1, h2, h3 { font-family: var(--heading); color: var(--navy); line-height: 1.2; margin: 0; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+
+  /* Header */
+  .top { border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 84px; }
+  .top img { display: block; height: 62px; width: auto; }
+  .top nav { display: flex; gap: 28px; font-family: var(--heading); font-size: 15px; font-weight: 500; }
+  .top nav a { color: var(--teal-deep); text-decoration: none; }
+  .top nav a:hover { color: var(--teal); }
+  @media (max-width: 600px) {
+    .top .wrap { min-height: 68px; }
+    .top img { height: 40px; }
+    .top nav { gap: 16px; font-size: 14px; }
+  }
+  @media (max-width: 340px) { .top nav { display: none; } }
+
+  /* Hero */
+  .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; padding-top: 88px; padding-bottom: 88px; }
+  .eyebrow { font-family: var(--heading); font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin: 0 0 18px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 500; letter-spacing: -0.01em; }
+  .hero p.lede { font-size: 19px; color: var(--muted); max-width: 34em; margin: 24px 0 0; }
+  .hero .mark { width: 100%; max-width: 400px; justify-self: end; }
+  @media (max-width: 820px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; padding-bottom: 56px; }
+    .hero .mark { order: -1; max-width: 160px; justify-self: start; }
+  }
+
+  /* Bands */
+  section.band { padding: 80px 0; }
+  section.band.soft { background: var(--soft); }
+  .band h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 500; margin-bottom: 36px; }
+  .band h2::before { content: ""; display: block; width: 44px; height: 6px; border-radius: 3px; margin-bottom: 18px; background: linear-gradient(90deg, var(--green), var(--teal) 60%, var(--navy)); }
+  @media (max-width: 600px) { section.band { padding: 56px 0; } }
+
+  /* Practice */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 28px; }
+  .card h3 { font-size: 19px; font-weight: 500; margin-bottom: 12px; }
+  .card p { margin: 0; font-size: 16px; }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
+
+  .fields { margin-top: 44px; }
+  .fields h3 { font-size: 15px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-deep); margin-bottom: 14px; }
+  .fields ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .fields li { font-family: var(--heading); font-size: 15px; color: var(--teal-deep); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  #about h2 { margin-bottom: 6px; }
+  .role { font-family: var(--heading); color: var(--teal); font-weight: 500; font-size: 18px; margin: 0 0 32px; }
+  .about p { margin: 0 0 18px; }
+  .creds h3 { font-size: 15px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--teal-deep); margin: 0 0 10px; }
+  .creds ul { list-style: none; margin: 0 0 28px; padding: 0; font-size: 15px; }
+  .creds li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .creds li:last-child { border-bottom: 0; }
+  .creds .sub { display: block; color: var(--muted); font-size: 14px; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* Contact */
+  .contact p.note { color: var(--muted); margin: 0 0 28px; }
+  .contact dl { display: grid; grid-template-columns: max-content 1fr; gap: 10px 28px; margin: 0; }
+  .contact dt { font-family: var(--heading); font-weight: 500; color: var(--teal-deep); }
+  .contact dd { margin: 0; }
+  @media (max-width: 480px) { .contact dl { grid-template-columns: 1fr; gap: 2px; } .contact dd { margin-bottom: 12px; } }
+
+  /* Footer */
+  .reveal { font: inherit; color: var(--teal); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .reveal:hover { color: var(--navy); }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 0 48px; font-size: 13px; color: var(--muted); }
+  footer p { margin: 0 0 10px; max-width: 60em; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="King Intellectual Asset Management, home"><img src="assets/logo.svg" alt="King Intellectual Asset Management" width="168" height="62"></a>
+    <nav aria-label="Sections">
+      <a href="#practice">Practice</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Patent &amp; trademark counsel &middot; Colorado</p>
+        <h1>Intellectual property attorneys fluent in technology and people.</h1>
+        <p class="lede">King Intellectual Asset Management is a boutique IP firm on Colorado's Front Range. We represent companies from garage startups to Fortune 500 technology leaders, in patents and trademarks from strategy through enforcement.</p>
+      </div>
+      <img class="mark" src="assets/mark.svg" alt="" width="400" height="303">
+    </div>
+  </section>
+
+  <section class="band soft" id="practice">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Patent prosecution and portfolio strategy</h3>
+          <p>Applications built to be enforced. Claims come first, the specification teaches the invention, and each drafting choice accounts for how infringement would actually be proven. In prosecution we work with examiners toward claims that are commercially meaningful and genuinely valid.</p>
+        </div>
+        <div class="card">
+          <h3>Opinions, post-grant and litigation</h3>
+          <p>Validity, infringement and freedom-to-operate opinions; inter partes review and other PTAB proceedings; and patent and trademark litigation at the trial and appellate levels. Litigating patents is what taught us how to write them.</p>
+        </div>
+        <div class="card">
+          <h3>Trademarks</h3>
+          <p>Clearance, registration and prosecution, TTAB proceedings, and portfolio management, for startups and established consumer brands alike.</p>
+        </div>
+      </div>
+      <div class="fields">
+        <h3>Technology</h3>
+        <ul>
+          <li>Semiconductors and packaging</li>
+          <li>Networking and telecommunications</li>
+          <li>Virtualization and cloud infrastructure</li>
+          <li>Software</li>
+          <li>Electronics</li>
+          <li>Medical devices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="about">
+    <div class="wrap">
+      <h2>Chad King</h2>
+      <p class="role">Founder and principal attorney</p>
+      <div class="about">
+        <div>
+          <p>Chad has spent more than twenty years as primary outside IP counsel to companies ranging from garage startups to Fortune 500 corporations, as well as government entities. He has written and litigated patents in roughly equal measure. That experience shapes both how he attacks patents in litigation and how he protects them when drafting.</p>
+          <p>He believes an IP strategy has to follow the client's business strategy, and that the aim is to optimize the value of a portfolio rather than merely its size.</p>
+          <p>An engineer by training, Chad worked in IT at IBM before law school and clerked for Judge Jerry E. Smith of the U.S. Court of Appeals for the Fifth Circuit after it.</p>
+          <p>Away from the office he is with his wife Melissa, their adult children and two Bernadoodles, on a golf course he loves and hates in equal measure, or deep in a sci-fi novel.</p>
+        </div>
+        <div class="creds">
+          <h3>Education</h3>
+          <ul>
+            <li>Cornell Law School, J.D. <em>magna cum laude</em>, 2000<span class="sub">Order of the Coif; Senior Note Editor; John M. Olin Scholar</span></li>
+            <li>University of Colorado, B.S. Civil/Environmental Engineering, 1995</li>
+          </ul>
+          <h3>Admissions</h3>
+          <ul>
+            <li>Colorado</li>
+            <li>U.S. Patent and Trademark Office</li>
+            <li>U.S. Courts of Appeals for the Fourth, Fifth, Tenth and Federal Circuits</li>
+            <li>U.S. District Courts for the District of Colorado and the Northern District of Illinois</li>
+          </ul>
+          <h3>Recognition and writing</h3>
+          <ul>
+            <li>Colorado Super Lawyers, since 2015</li>
+            <li>Editor, patent section, <em>Corporate Counsel Solutions: Intellectual Property Management</em> (LexisNexis)</li>
+            <li>&ldquo;Abort, Retry, Fail: Protection for Software-Related Inventions in the Wake of <em>State Street Bank</em>,&rdquo; 85 Cornell L. Rev. 1118 (2000)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band soft contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="note">We are not accepting new clients at this time.</p>
+      <dl>
+        <dt>Email</dt>
+        <dd><button type="button" class="reveal" data-u="dahc" data-d="moc.mai-gnik">Show email address</button></dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/chad-king-denver">linkedin.com/in/chad-king-denver</a></dd>
+        <dt>Address</dt>
+        <dd>10 Primrose St., Unit 7, Palmer Lake, CO 80133</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 King IAM, LLC d/b/a King Intellectual Asset Management. Attorneys are licensed in Colorado and registered to practice before the U.S. Patent and Trademark Office.</p>
+    <p>Nothing on this site is legal advice. Contacting us does not create an attorney-client relationship, and please do not send confidential information until we have confirmed in writing that we can take on your matter.</p>
+  </div>
+</footer>
+
+<script>
+  // The address is stored reversed and only assembled on click, so it never appears in the page source.
+  document.querySelectorAll(".reveal").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var flip = function (t) { return t.split("").reverse().join(""); };
+      var addr = flip(btn.dataset.u) + "@" + flip(btn.dataset.d);
+      var a = document.createElement("a");
+      a.href = "mailto:" + addr;
+      a.textContent = addr;
+      btn.replaceWith(a);
+    });
+  });
+</script>
+
+</body>
+</html>
